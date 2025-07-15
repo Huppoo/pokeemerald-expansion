@@ -18,6 +18,10 @@
 #define QUEST_1         0
 #define QUEST_2         1
 #define QUEST_3         2
+#define QUEST_NONE                      0xFFFF
+#define QUEST_1_MEDS_FOR_JIRACHI        0
+#define QUEST_2_STARBOUND_OATH          1
+#define QUEST_3_ASTRIDALE_SABOTEUR      2
 #define QUEST_4         3
 #define QUEST_5         4
 #define QUEST_6         5

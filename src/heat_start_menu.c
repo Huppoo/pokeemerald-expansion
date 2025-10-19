@@ -54,6 +54,7 @@
 #include "rtc.h"
 #include "event_object_movement.h"
 #include "gba/isagbprint.h"
+#include "quests.h"
 
 /* CALLBACKS */
 static void SpriteCB_IconPoketch(struct Sprite* sprite);
@@ -99,7 +100,8 @@ enum MENU {
   MENU_POKEDEX,
   MENU_PARTY,
   MENU_BAG,
-  MENU_POKETCH,
+  // MENU_POKETCH,
+  MENU_QUESTS,
   MENU_TRAINER_CARD,
   MENU_SAVE,
   MENU_OPTIONS,
@@ -475,11 +477,11 @@ static const struct SpriteTemplate gSpriteIconFlag = {
 };
 
 static void SpriteCB_IconPoketch(struct Sprite* sprite) {
-  if (menuSelected == MENU_POKETCH && sHeatStartMenu->flag == FLAG_VALUE_NOT_SET) {
+  if (menuSelected == MENU_QUESTS && sHeatStartMenu->flag == FLAG_VALUE_NOT_SET) {
     sHeatStartMenu->flag = FLAG_VALUE_SET;
     StartSpriteAnim(sprite, 1);
     StartSpriteAffineAnim(sprite, 1);
-  } else if (menuSelected != MENU_POKETCH) {
+  } else if (menuSelected != MENU_QUESTS) {
     StartSpriteAnim(sprite, 0);
     StartSpriteAffineAnim(sprite, 0);
   }
@@ -592,8 +594,8 @@ static const u8 gText_CurrentTimePM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VA
 static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} PM");
 
 static void SetSelectedMenu(void) {
-  if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE) {
-    menuSelected = MENU_POKETCH;
+  if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE) {
+    menuSelected = MENU_QUESTS;
   } else if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) {
     menuSelected = MENU_POKEDEX;
   } else if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) {
@@ -658,8 +660,8 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_UpdateMenuName();
     CreateTask(Task_HeatStartMenu_HandleMainInput, 0);
   } else {
-    if (menuSelected == 255 || menuSelected == MENU_POKETCH || menuSelected == MENU_SAVE) {
-      menuSelected = MENU_FLAG;
+    if (menuSelected == 255 || menuSelected == MENU_QUESTS || menuSelected == MENU_SAVE) {
+     menuSelected = MENU_FLAG;
     }
 
     HeatStartMenu_LoadSprites();
@@ -827,7 +829,7 @@ static void HeatStartMenu_UpdateClockDisplay(void)
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
-static const u8 gText_Poketch[] = _("  PokeNav");
+static const u8 gText_Quests[] = _("  Quests");
 static const u8 gText_Pokedex[] = _("  Pokédex");
 static const u8 gText_Party[]   = _("    Party ");
 static const u8 gText_Bag[]     = _("      Bag  ");
@@ -841,31 +843,31 @@ static void HeatStartMenu_UpdateMenuName(void) {
   FillWindowPixelBuffer(sHeatStartMenu->sMenuNameWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
   PutWindowTilemap(sHeatStartMenu->sMenuNameWindowId);
 
-  switch(menuSelected) {
-    case MENU_POKETCH:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL);
-      break;
-    case MENU_POKEDEX:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL);
-      break;
-    case MENU_PARTY:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL);
-      break;
-    case MENU_BAG:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL);
-      break;
-    case MENU_TRAINER_CARD:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL);
-      break;
-    case MENU_SAVE:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL);
-      break;
-    case MENU_OPTIONS:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL);
-      break;
-    case MENU_FLAG:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL);
-      break;
+    switch(menuSelected) {
+        case MENU_QUESTS:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Quests, 1, 0, 0xFF, NULL);
+          break;
+        case MENU_POKEDEX:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL);
+          break;
+        case MENU_PARTY:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL);
+          break;
+        case MENU_BAG:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL);
+          break;
+        case MENU_TRAINER_CARD:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL);
+          break;
+        case MENU_SAVE:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL);
+          break;
+        case MENU_OPTIONS:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL);
+          break;
+        case MENU_FLAG:
+          AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL);
+          break;
   }
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);
 }
@@ -1322,8 +1324,8 @@ static void DoCleanUpAndStartSafariZoneRetire(void) {
 
 static void HeatStartMenu_OpenMenu(void) {
   switch (menuSelected) {
-    case MENU_POKETCH:
-      DoCleanUpAndChangeCallback(CB2_InitPokeNav);
+    case MENU_QUESTS:
+      DoCleanUpAndChangeCallback(CB2_OpenQuestMenu);
       break;
     case MENU_POKEDEX:
       DoCleanUpAndChangeCallback(CB2_OpenPokedex);
@@ -1364,7 +1366,7 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
     default:
       menuSelected++;
       PlaySE(SE_SELECT);
-      if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
+      if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == FALSE && menuSelected == MENU_QUESTS) {
         menuSelected++;
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_PARTY) {
         menuSelected++;

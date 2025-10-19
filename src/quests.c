@@ -2790,6 +2790,11 @@ static void Task_QuestMenuTurnOff2(u8 taskId)
 	}
 }
 
+void CB2_OpenQuestMenu(void)
+{
+    QuestMenu_Init(0, CB2_ReturnToFieldWithOpenMenu);
+}
+
 void Task_QuestMenu_OpenFromStartMenu(u8 taskId)
 {
 	s16 *data = gTasks[taskId].data;

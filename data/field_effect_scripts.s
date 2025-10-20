@@ -81,7 +81,6 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_TracksSpot                @ FLDEFF_TRACKS_SPOT
 	.4byte gFieldEffectScript_CaveDust                  @ FLDEFF_CAVE_DUST
 	.4byte gFieldEffectScript_Defog                     @ FLDEFF_DEFOG
-	.4byte gFieldEffectScript_TallGrassPurple 			@ FLDEFF_TALL_GRASS_PURPLE
 	.4byte gFieldEffectScript_QuestIcon					@ FLDEFF_QUEST_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::

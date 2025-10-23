@@ -913,8 +913,9 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "This is our new home!\p"
 	.string "It has a quaint feel, but it seems to be\n"
 	.string "an easy place to live, don't you think?\p"
-	.string "And, you get your own room, {PLAYER}!\n"
-	.string "Let's go inside.$"
+	.string "Plus, I think the neighbour has a kid\n"
+    .string "your age.\p"
+    .string "Let's go inside.$"
 
 LittlerootTown_Text_WaitPlayer:
 	.string "MOM: Wait, {PLAYER}!$"

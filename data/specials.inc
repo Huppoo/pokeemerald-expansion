@@ -168,6 +168,7 @@ gSpecials::
 	def_special GetPlayerTrainerIdOnesDigit
 	def_special GetPlayerBigGuyGirlString
 	def_special GetRivalSonDaughterString
+    def_special GetRivalBoyGirlString
 	def_special SetHiddenItemFlag
 	def_special CableCarWarp
 	def_special CableCar
@@ -563,3 +564,4 @@ gSpecials::
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special EnterCode
 	def_special GetCodeFeedback
+    def_special DoRivalNamingScreen

@@ -2,6 +2,7 @@
 #define GUARD_DECOMPRESS_H
 
 #include "sprite.h"
+#define LZDecompressWram(src, dest) DecompressDataWithHeaderWram((const u32 *)(src), (dest))
 
 #define MAX_DECOMPRESSION_BUFFER_SIZE 0x4000
 

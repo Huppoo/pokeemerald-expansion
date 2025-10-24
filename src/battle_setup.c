@@ -959,74 +959,6 @@ static void InitTrainerBattleVariables(void)
 }
 
 void TrainerBattleLoadArgs(const u8 *data)
-static inline void SetU8(void *ptr, u8 value)
-{
-    *(u8 *)(ptr) = value;
-}
-
-static inline void SetU16(void *ptr, u16 value)
-{
-    *(u16 *)(ptr) = value;
-}
-
-static inline void SetU32(void *ptr, u32 value)
-{
-    *(u32 *)(ptr) = value;
-}
-
-static inline void SetPtr(const void *ptr, const void *value)
-{
-    *(const void **)(ptr) = value;
-}
-
-static void TrainerBattleLoadArgs(const struct TrainerBattleParameter *specs, const u8 *data)
-{
-    while (1)
-    {
-        switch (specs->ptrType)
-        {
-        case TRAINER_PARAM_LOAD_VAL_8BIT:
-            SetU8(specs->varPtr, TrainerBattleLoadArg8(data));
-            data += 1;
-            break;
-        case TRAINER_PARAM_LOAD_VAL_16BIT:
-            SetU16(specs->varPtr, TrainerBattleLoadArg16(data));
-            data += 2;
-            break;
-        case TRAINER_PARAM_LOAD_VAL_32BIT:
-            SetU32(specs->varPtr, TrainerBattleLoadArg32(data));
-            data += 4;
-            break;
-        case TRAINER_PARAM_CLEAR_VAL_8BIT:
-            SetU8(specs->varPtr, 0);
-            break;
-        case TRAINER_PARAM_CLEAR_VAL_16BIT:
-            SetU16(specs->varPtr, 0);
-            break;
-        case TRAINER_PARAM_CLEAR_VAL_32BIT:
-            SetU32(specs->varPtr, 0);
-            break;
-        case TRAINER_PARAM_LOAD_SCRIPT_RET_ADDR:
-            SetPtr(specs->varPtr, data);
-            return;
-        }
-        specs++;
-    }
-}
-
-void SetMapVarsToTrainer(void)
-{
-    if (sTrainerObjectEventLocalId != 0)
-    {
-        gSpecialVar_LastTalked = sTrainerObjectEventLocalId;
-        gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(sTrainerObjectEventLocalId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
-    }
-    if (gTrainerBattleOpponent_A != 0) {
-        gSpeakerName = gTrainers[gTrainerBattleOpponent_A].trainerName;
-    }
-}
-
-const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
 {
     InitTrainerBattleVariables();
     memcpy(gTrainerBattleParameter.data, data, sizeof(TrainerBattleParameter));
@@ -1559,14 +1491,6 @@ static const u8 *GetIntroSpeechOfApproachingTrainer(void)
         return ReturnEmptyStringIfNull(TRAINER_BATTLE_PARAM.introTextA);
     else
         return ReturnEmptyStringIfNull(TRAINER_BATTLE_PARAM.introTextB);
-    if (gApproachingTrainerId == 0) {
-        gSpeakerName = gTrainers[gTrainerBattleOpponent_A].trainerName;
-        return ReturnEmptyStringIfNull(sTrainerAIntroSpeech);
-    }
-    else {
-        gSpeakerName = gTrainers[gTrainerBattleOpponent_B].trainerName;
-        return ReturnEmptyStringIfNull(sTrainerBIntroSpeech);
-    }
 }
 
 const u8 *GetTrainerALoseText(void)

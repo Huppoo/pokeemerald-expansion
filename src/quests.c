@@ -212,7 +212,7 @@ static bool32 ObjectEventAlreadyHasQuest(bool32);
 
 // Tiles, palettes and tilemaps for the Quest Menu
 static const u32 sQuestMenuTiles[] = INCBIN_U32("graphics/quest_menu/menu.4bpp.lz");
-static const u32 sQuestMenuBgPals[] = INCBIN_U32("graphics/quest_menu/menu.gbapal.lz");
+static const u32 sQuestMenuBgPals[] = INCBIN_U32("graphics/quest_menu/menu.gbapal");
 static const u32 sQuestMenuTilemap[] = INCBIN_U32("graphics/quest_menu/menu.bin.lz");
 
 //Strings used for the Quest Menu
@@ -1127,30 +1127,22 @@ static bool8 SetupGraphics(void)
 		case 17:
 			gMain.state++;
 			break;
-		case 18:
-			if (sListMenuState.initialized == 1)
-			{
-				BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
-			}
-			gMain.state++;
-			break;
-		case 19:
-			if (sListMenuState.initialized == 1)
-			{
-				BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
-			}
-			else
-			{
+        case 18:
+            BlendPalettes(PALETTES_ALL, 16, 0);
+            gMain.state++;
+            break;
+        case 19:
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+            gPaletteFade.bufferTransferDisabled = FALSE;
 
-				BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
-				SetInitializedFlag(1);
-			}
-			gMain.state++;
-			break;
-		default:
-			SetVBlankCallback(VBlankCB);
-			SetMainCallback2(MainCB);
-			return TRUE;
+            if (sListMenuState.initialized != 1)
+                SetInitializedFlag(1);
+            gMain.state++;
+            break;
+        default:
+            SetVBlankCallback(VBlankCB);
+            SetMainCallback2(MainCB);
+            return TRUE;
 	}
 	return FALSE;
 }

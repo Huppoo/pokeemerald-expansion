@@ -210,3 +210,45 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_PokemonCenterAlt[] = INCBIN_U16("data/tilesets/secondary/pokemon_center_alt/metatiles.bin");
 const u16 gMetatileAttributes_PokemonCenterAlt[] = INCBIN_U16("data/tilesets/secondary/pokemon_center_alt/metatile_attributes.bin");
+
+const u16 gMetatiles_Beach_Cave[] = INCBIN_U16("data/tilesets/secondary/beach_cave/metatiles.bin");
+const u16 gMetatileAttributes_Beach_Cave[] = INCBIN_U16("data/tilesets/secondary/beach_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_UnderwaterP[] = INCBIN_U16("data/tilesets/primary/underwater_p/metatiles.bin");
+const u16 gMetatileAttributes_UnderwaterP[] = INCBIN_U16("data/tilesets/primary/underwater_p/metatile_attributes.bin");
+
+const u16 gMetatiles_UnderwaterS[] = INCBIN_U16("data/tilesets/secondary/underwater_s/metatiles.bin");
+const u16 gMetatileAttributes_UnderwaterS[] = INCBIN_U16("data/tilesets/secondary/underwater_s/metatile_attributes.bin");
+
+const u16 gMetatiles_Desert[] = INCBIN_U16("data/tilesets/primary/desert/metatiles.bin");
+const u16 gMetatileAttributes_Desert[] = INCBIN_U16("data/tilesets/primary/desert/metatile_attributes.bin");
+
+const u16 gMetatiles_DojoIn[] = INCBIN_U16("data/tilesets/secondary/dojo_in/metatiles.bin");
+const u16 gMetatileAttributes_DojoIn[] = INCBIN_U16("data/tilesets/secondary/dojo_in/metatile_attributes.bin");
+
+const u16 gMetatiles_DojoOut[] = INCBIN_U16("data/tilesets/secondary/dojo_out/metatiles.bin");
+const u16 gMetatileAttributes_DojoOut[] = INCBIN_U16("data/tilesets/secondary/dojo_out/metatile_attributes.bin");
+
+const u16 gMetatiles_PyramidIn[] = INCBIN_U16("data/tilesets/primary/pyramid_in/metatiles.bin");
+const u16 gMetatileAttributes_PyramidIn[] = INCBIN_U16("data/tilesets/primary/pyramid_in/metatile_attributes.bin");
+
+const u16 gMetatiles_PyramidOut[] = INCBIN_U16("data/tilesets/secondary/pyramid_out/metatiles.bin");
+const u16 gMetatileAttributes_PyramidOut[] = INCBIN_U16("data/tilesets/secondary/pyramid_out/metatile_attributes.bin");
+
+const u16 gMetatiles_Sewer[] = INCBIN_U16("data/tilesets/secondary/sewer/metatiles.bin");
+const u16 gMetatileAttributes_Sewer[] = INCBIN_U16("data/tilesets/secondary/sewer/metatile_attributes.bin");
+
+const u16 gMetatiles_Distortion_World[] = INCBIN_U16("data/tilesets/secondary/distortion_world/metatiles.bin");
+const u16 gMetatileAttributes_Distortion_World[] = INCBIN_U16("data/tilesets/secondary/distortion_world/metatile_attributes.bin");
+
+const u16 gMetatiles_Space_Meteor[] = INCBIN_U16("data/tilesets/secondary/space_meteor/metatiles.bin");
+const u16 gMetatileAttributes_Space_Meteor[] = INCBIN_U16("data/tilesets/secondary/space_meteor/metatile_attributes.bin");
+
+const u16 gMetatiles_General_Snow[] = INCBIN_U16("data/tilesets/primary/general_snow/metatiles.bin");
+const u16 gMetatileAttributes_General_Snow[] = INCBIN_U16("data/tilesets/primary/general_snow/metatile_attributes.bin");
+
+const u16 gMetatiles_CavesP[] = INCBIN_U16("data/tilesets/primary/caves_p/metatiles.bin");
+const u16 gMetatileAttributes_CavesP[] = INCBIN_U16("data/tilesets/primary/caves_p/metatile_attributes.bin");
+
+const u16 gMetatiles_CavesS[] = INCBIN_U16("data/tilesets/secondary/caves_s/metatiles.bin");
+const u16 gMetatileAttributes_CavesS[] = INCBIN_U16("data/tilesets/secondary/caves_s/metatile_attributes.bin");

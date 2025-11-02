@@ -995,3 +995,25 @@ const struct Tileset gTileset_CavesS =
     .metatileAttributes = gMetatileAttributes_CavesS,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Shady_Forest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Shady_Forest,
+    .palettes = gTilesetPalettes_Shady_Forest,
+    .metatiles = gMetatiles_Shady_Forest,
+    .metatileAttributes = gMetatileAttributes_Shady_Forest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Lab_Town =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Lab_Town,
+    .palettes = gTilesetPalettes_Lab_Town,
+    .metatiles = gMetatiles_Lab_Town,
+    .metatileAttributes = gMetatileAttributes_Lab_Town,
+    .callback = NULL,
+};

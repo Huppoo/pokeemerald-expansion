@@ -2255,7 +2255,7 @@ void Task_DoReturnToFieldFishTreasure(u8 taskId)
                 {
                     PlaySE(SE_SELECT);
 
-                    switch (GetPocketByItemId(gSpecialVar_ItemId))
+                    switch (GetItemPocket(gSpecialVar_ItemId))
                     {
                         case POCKET_ITEMS:
                             StringCopy(gStringVar3, gText_Items);
@@ -2272,6 +2272,8 @@ void Task_DoReturnToFieldFishTreasure(u8 taskId)
                         case POCKET_KEY_ITEMS:
                             StringCopy(gStringVar3, gText_Key_Items);
                             break;
+                        default:
+                              break;
                     }
                 }
 

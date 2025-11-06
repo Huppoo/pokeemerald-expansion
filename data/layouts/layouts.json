@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_PokemonCenterAlt",
       "border_filepath": "data/layouts/PokemonCenter_Alt/border.bin",
       "blockdata_filepath": "data/layouts/PokemonCenter_Alt/map.bin"
+    },
+    {
+      "id": "LAYOUT_SEWER",
+      "name": "sewer_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sewer",
+      "border_filepath": "data/layouts/sewer/border.bin",
+      "blockdata_filepath": "data/layouts/sewer/map.bin"
     }
   ]
 }

@@ -1161,3 +1161,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 
 	.include "data/maps/PokemonCenter_Alt/scripts.inc"
+
+	.include "data/maps/sewer/scripts.inc"

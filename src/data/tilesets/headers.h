@@ -1017,3 +1017,47 @@ const struct Tileset gTileset_Lab_Town =
     .metatileAttributes = gMetatileAttributes_Lab_Town,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Altar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Altar,
+    .palettes = gTilesetPalettes_Altar,
+    .metatiles = gMetatiles_Altar,
+    .metatileAttributes = gMetatileAttributes_Altar,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_cafe =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_cafe,
+    .palettes = gTilesetPalettes_cafe,
+    .metatiles = gMetatiles_cafe,
+    .metatileAttributes = gMetatileAttributes_cafe,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_BrickCity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_BrickCity,
+    .palettes = gTilesetPalettes_BrickCity,
+    .metatiles = gMetatiles_BrickCity,
+    .metatileAttributes = gMetatileAttributes_BrickCity,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Little_Office =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Little_Office,
+    .palettes = gTilesetPalettes_Little_Office,
+    .metatiles = gMetatiles_Little_Office,
+    .metatileAttributes = gMetatileAttributes_Little_Office,
+    .callback = NULL,
+};

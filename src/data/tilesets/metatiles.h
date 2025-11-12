@@ -258,3 +258,15 @@ const u16 gMetatileAttributes_Shady_Forest[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_Lab_Town[] = INCBIN_U16("data/tilesets/secondary/lab_town/metatiles.bin");
 const u16 gMetatileAttributes_Lab_Town[] = INCBIN_U16("data/tilesets/secondary/lab_town/metatile_attributes.bin");
+
+const u16 gMetatiles_Altar[] = INCBIN_U16("data/tilesets/secondary/altar/metatiles.bin");
+const u16 gMetatileAttributes_Altar[] = INCBIN_U16("data/tilesets/secondary/altar/metatile_attributes.bin");
+
+const u16 gMetatiles_cafe[] = INCBIN_U16("data/tilesets/secondary/cafe/metatiles.bin");
+const u16 gMetatileAttributes_cafe[] = INCBIN_U16("data/tilesets/secondary/cafe/metatile_attributes.bin");
+
+const u16 gMetatiles_BrickCity[] = INCBIN_U16("data/tilesets/secondary/brick_city/metatiles.bin");
+const u16 gMetatileAttributes_BrickCity[] = INCBIN_U16("data/tilesets/secondary/brick_city/metatile_attributes.bin");
+
+const u16 gMetatiles_Little_Office[] = INCBIN_U16("data/tilesets/secondary/little_office/metatiles.bin");
+const u16 gMetatileAttributes_Little_Office[] = INCBIN_U16("data/tilesets/secondary/little_office/metatile_attributes.bin");

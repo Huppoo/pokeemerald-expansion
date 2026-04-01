@@ -243,10 +243,14 @@
 #define OBJ_EVENT_GFX_LINK_RS_MAY                236
 #define OBJ_EVENT_GFX_LUGIA                      237
 #define OBJ_EVENT_GFX_HOOH                       238
-#define OBJ_EVENT_GFX_DAWN                   239
+#define OBJ_EVENT_GFX_DAWN                       239
 #define OBJ_EVENT_GFX_POKE_BALL                  240
 #define OBJ_EVENT_GFX_OW_MON                     241
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               242
+#define OBJ_EVENT_GFX_POKE_BALL                  243
+#define OBJ_EVENT_GFX_OW_MON                     244
+#define OBJ_EVENT_GFX_LIGHT_SPRITE               245
+#define OBJ_EVENT_GFX_APRICORN_TREE              246
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
